@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>Document</title>
+    <title>Mysterious Button</title>
 </head>
 <body>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#visible").click(function(){
+                $('#invisible1').removeClass("hide");
+                $('#invisible1').addClass("show");
+                $('#invisible2').removeClass("hide");
+                $('#invisible2').addClass("show glitch")
+            })
+        })
+    </script>
     <script src="confetti.js"></script>
     <header>
-       <h1>Thank you </h1> 
+        <h2 id="invisible2" class="hide">彭嘉乐</h2>
+        <h1 id="invisible1" class="hide" data-text="calvin">calvin</h1> 
+       
     </header>
     <script>
         function sleep(ms) {
@@ -24,11 +36,11 @@
             confetti.start();
             await sleep(5000);
             confetti.stop();
-}
+            }
     </script>
 
     <div class="button">
-        <button onclick="delayedconfetti()"><span>Press Me</span></button>
+        <button onclick="delayedconfetti()" id="visible"><span>Press Me</span></button>
     </div>
     
     
